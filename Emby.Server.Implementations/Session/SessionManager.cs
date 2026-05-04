@@ -967,7 +967,7 @@ namespace Emby.Server.Implementations.Session
 
             if (user.RememberAudioSelections)
             {
-                if (data.AudioStreamIndex != info.AudioStreamIndex)
+                if (info.AudioStreamIndex.HasValue && data.AudioStreamIndex != info.AudioStreamIndex)
                 {
                     data.AudioStreamIndex = info.AudioStreamIndex;
                     changed = true;
@@ -984,7 +984,7 @@ namespace Emby.Server.Implementations.Session
 
             if (user.RememberSubtitleSelections)
             {
-                if (data.SubtitleStreamIndex != info.SubtitleStreamIndex)
+                if (info.SubtitleStreamIndex.HasValue && data.SubtitleStreamIndex != info.SubtitleStreamIndex)
                 {
                     data.SubtitleStreamIndex = info.SubtitleStreamIndex;
                     changed = true;
